@@ -1,0 +1,53 @@
+\ProvidesPackage{header}
+
+\usepackage[T1]{fontenc}				% LaTeX Fonts in westeuropäischer Codierung
+\usepackage[ngerman]{babel}				% Deutsche Zeichenformatierung
+\usepackage{microtype}					% Mikrotypografie
+\usepackage{pdfpages}                   % ganze PDF Seite einbinden (Laborbuch)
+
+%%%--------------------------Pakete-----------------------------
+\usepackage{amsfonts, amsmath,
+	amssymb, amsthm}				% AMS Packete
+\usepackage{mathtools}					% AMS Erweiterung
+\usepackage{siunitx}					% Einheiten
+\sisetup{locale = DE, 
+	separate-uncertainty=true, 
+	output-decimal-marker = {,},
+	per-mode=fraction} %fraction, power, table-align-uncertainty=true, englisch (für dt: locale = DE,...)
+
+\usepackage{hyperref}
+\usepackage[margin=2.5cm,
+]{geometry}							% Seitenränder
+\usepackage{graphicx}					% Grafik und Bilderumgebung
+\usepackage{float}						% Figure !Genau! hier platzieren [H]
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{cleveref}					% Referenz mit Abb. ...
+\usepackage[section]{placeins}			% Floats überschreiten keine Section, alt. mit \FloatBarrier
+\usepackage[normalem]{ulem}
+\usepackage{gensymb}					% Grad \degree symbol
+\usepackage{lmodern}					% Fehler Meldung "Use scalable font" fix
+\usepackage[backend = biber,
+style = ieee,
+sorting = none,
+]{biblatex}					% Literaturverzeichnis
+% \parencite{} : Quelle mit Author in Klammern
+% \autocite{} : Quelle mit Author in Text
+
+
+%%%--------------------------Absätz-/Zeilenabstand-----------------
+\setlength\emergencystretch{2em}		% maximaler Abstand zwischen Wörtern
+\setlength{\parindent}{0em}				% Größe des Einzugs der Absätze
+\setlength{\parskip}{.5em}				% Absatzabstand
+\renewcommand{\baselinestretch}{1.1}	% Zeilenabstand
+\newcommand{\QRightarrow}{\quad \Rightarrow \quad}
+\captionsetup[figure]{name={Abb.}}
+\crefname{figure}{Abb.}{Abb.}
+\crefname{equation}{Gl.}{Gl.}
+
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}	% umkreiste Zeichen
+
+\newcommand{\ck}[1]{\textcolor{red}{\textbf{ #1 }}}     % Markierung für Kommentare
+\newcommand{\ckq}{\textcolor{red}{\textbf{???}}}        % Markierung (rotes "?")

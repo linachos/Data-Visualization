@@ -1,0 +1,104 @@
+\documentclass[12pt,a4paper,oneside,english]{article}
+\usepackage{header}
+\usepackage{titlesec}
+
+\titleformat{\section}
+{\normalfont\fontsize{14}{8}\bfseries} % format: 14 pt, baseline skip 16 pt, bold
+{\thesection}{1em}{}  % how the number is shown and spacing
+
+\titleformat{\subsection}
+{\normalfont\fontsize{12}{8}\bfseries} % e.g. 12 pt for subsections
+{\thesubsection}{1em}{}
+
+\titlespacing*{\section}{0pt}{8ex}{0ex}
+\titlespacing*{\subsection}{0pt}{3ex}{-1ex}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% Centered headline
+\fancyhead[C]{Data Visualization and Visual Analytics WiSe 25/26}
+\fancyhead[L]{Lina Sandberg}
+\fancyhead[R]{23.11.2025}
+
+
+\begin{document}
+
+\vspace*{-3em}	
+\begin{center}
+	\Large \textbf{Exercise 1}
+\end{center}
+\vspace*{-4em}	
+	
+\section*{Visualisation 1 - Life Expectancy Trends}
+	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{Fig_1.jpg}
+\end{figure}
+
+\subsection*{Figure–ground separation} 
+The lines are generally visible against the white background. However, the lines are particularly thin on the left plot. There are also many overlapping elements, which makes them harder to separate. Therefore, the image as such is not very clear.\\
+\textbf{Grade: 3}
+
+\subsection*{Preattentive attributes} 
+Since all the lines are more or less the same thickness and colour, they have an equal visual weight. This overwhelms the viewer, who is unable to focus on a clear takeaway. However, at least the colours bring the focus to the centre and the rising graphs.\\
+\textbf{Grade: 4}
+
+\subsection*{Encoding effectiveness} 
+Although the three separate plots are necessary to avoid information overload, they are not easily distinguishable. While the different line styles help to differentiate between the plots, they are quite subtle. In general, however, a line plot is a good way to show progression over time.\\
+\textbf{Grade: 3}
+
+\subsection*{Proximity and similarity}
+The colours are reused across all three plots, but there is no meaningful connection between them (for example, the country colours on the right-hand plot are not coordinated with the colours of the continents on the middle plot). The legends are also quite far from the plot lines.\\
+\textbf{Grade: 4}
+
+\subsection*{Color choice}
+The colours are distinguishable, but they are quite neon and not pleasant to look at. They are more or less distinguishable for colour-blind people, but not optimal, I would say.\\
+\textbf{Grade: 3}
+
+\subsection*{Alignment}
+Personally, I find the lack of alignment between the plots on the left and the one on the right distracting, and it draws my attention away from the message of the plot. Furthermore, the legend is rather cluttered, and the labels on the x-axis are angled, which makes them more difficult to read.\\
+\textbf{Grade: 5}
+
+\subsection*{Other Things \& Summary}
+The visualisation is rather overloaded with too many lines and categories. The core message is not easily understood, and a number of the design choices are questionable. Without the corresponding paper, I would only see rising life expectancies over time, and not get the intended core message referring to the impact of the pandemic.\\
+\textbf{Overall-Grade: 3.7}
+
+\section*{Visualisation 2 - Suicide Rates by Gender}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.56\linewidth]{Fig_2.png}
+\end{figure}
+
+\subsection*{Figure–ground separation} 
+The scatter points stand out clearly, as do the annotations. The gridlines are subtle, and the diagonal line displaying additional information underlines the core message without being overbearing.\\
+\textbf{Grade: 1}
+
+\subsection*{Preattentive attributes} 
+It takes a moment to understand the message and get an overview, as the colour intensity and labelling draw attention to the highlighted countries and away from the overall message.\\
+\textbf{Grade: 2}
+
+\subsection*{Encoding effectiveness} 
+A scatterplot is a good way to compare two numeric variables. However, it is not immediately obvious why the dot for South Korea is higher than the one for the US. Yet South Korea is labelled as having twice the value, while the US is labelled as having four times the value. The axes help to clarify things.
+The diagonal line helps convey the key message, but it is visually quite subtle and could be highlighted more.\\
+\textbf{Grade: 2}
+
+\subsection*{Proximity and similarity}
+The annotations are close to the relevant points and the colours and sizes are consistent throughout. However, the axes could be spaced more evenly, so that moving one step to the right represents the same amount as moving one step upwards. This would also help to sort out the confusing annotations mentioned earlier, which at first glance may seem difficult to understand.\\
+\textbf{Grade: 2}
+
+\subsection*{Color choice}
+Since there is only one colour, the scatter points can easily be distinguished from the axes. The chosen colour is soft and pleasant, and the variation in intensity makes the relevant points visible. This plot is also likely to be accessible to people with colour vision deficiency, since it uses only one colour and size is the primary encoding factor.\\
+\textbf{Grade: 1}
+
+\subsection*{Alignment}
+All the elements (text, axes, labels, annotations and arrows) are aligned very neatly, and the spacing is balanced, too.\\
+\textbf{Grade: 1}
+
+\subsection*{Other Things \& Summary}
+The visualisation tells a clear story with an informative title and subtitle, and is built around one key message. There are only a few minor remarks that are probably mainly subjective.\\
+\textbf{Overall-Grade: 1.5}
+
+\end{document}
