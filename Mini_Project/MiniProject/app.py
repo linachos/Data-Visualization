@@ -7,7 +7,7 @@ import numpy as np
 
 # Page configuration
 st.set_page_config(
-    page_title="NY/NJ Flight Delays Dashboard",
+    page_title="NY Flight Dashboard",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -91,10 +91,10 @@ df, airports, airlines, aircrafts = load_data()
 
 if df is not None:
     # Header
-    st.markdown('<div class="main-header">NY/NJ Airports Flight Delays Dashboard</div>', 
+    st.markdown('<div class="main-header">NY/NJ Airports Flight Delays</div>', 
                 unsafe_allow_html=True)
     st.markdown("")
-    st.markdown("### Port Authority of New York and New Jersey - 2024 Flight Analysis")
+    st.markdown("### Port Authority of New York and New Jersey - 2024 Departures Delay Analysis")
     
     # Sidebar filters
     st.sidebar.header("Filters")
@@ -105,31 +105,26 @@ if df is not None:
     ny_nj_airports = ['EWR', 'JFK', 'LGA', 'SWF']
     available_airports = sorted(df[df['origin'].isin(ny_nj_airports)]['origin'].unique())
     
+    if 'airport_multiselect' not in st.session_state:
+        st.session_state.airport_multiselect = available_airports
+    
     col_a1, col_a2 = st.sidebar.columns(2)
     with col_a1:
-        select_all_airports = st.button("✓ Select All", key="select_airports")
+        if st.button("✓ Select All", key="select_airports"):
+            st.session_state.airport_multiselect = available_airports
+
     with col_a2:
-        deselect_all_airports = st.button("✗ Clear All", key="deselect_airports")
-    
-    # Handle button clicks for airports
-    if select_all_airports:
-        st.session_state.selected_airports = available_airports
-    if deselect_all_airports:
-        st.session_state.selected_airports = []
-    
-    # Initialize session state for airports if not exists
-    if 'selected_airports' not in st.session_state:
-        st.session_state.selected_airports = available_airports
+        if st.button("✗ Clear All", key="deselect_airports"):
+            st.session_state.airport_multiselect = []
     
     selected_airports = st.sidebar.multiselect(
         "Select Airport(s)",
         options=available_airports,
-        default=st.session_state.selected_airports,
         key="airport_multiselect"
     )
     
     # Update session state
-    st.session_state.selected_airports = selected_airports
+    #st.session_state.selected_airports = selected_airports
     
     # Airline filter with select all/none buttons
     st.sidebar.subheader("Airlines")
@@ -191,11 +186,11 @@ if df is not None:
     with col1:
         col1_top, col_sep, col1_bottom = st.container(), st.container(), st.container()
         with col1_top:
-            avg_delay = filtered_df['departure_delay'].mean()
+            total_flights = len(filtered_df)
             st.markdown(f"""
                 <div class="kpi-card">
-                    <div class="kpi-value">{avg_delay:.1f} min</div>
-                    <div class="kpi-label">Average Delay</div>
+                    <div class="kpi-value">{total_flights:,}</div>
+                    <div class="kpi-label">Total Flights</div>
                 </div>
             """, unsafe_allow_html=True)
         
@@ -203,11 +198,11 @@ if df is not None:
             st.markdown("<br>", unsafe_allow_html=True)
         
         with col1_bottom:
-            total_flights = len(filtered_df)
+            avg_delay = filtered_df['departure_delay'].mean()
             st.markdown(f"""
                 <div class="kpi-card">
-                    <div class="kpi-value">{total_flights:,}</div>
-                    <div class="kpi-label">Total Flights</div>
+                    <div class="kpi-value">{avg_delay:.1f} min</div>
+                    <div class="kpi-label">Average Delay</div>
                 </div>
             """, unsafe_allow_html=True)
     
@@ -227,10 +222,12 @@ if df is not None:
             st.markdown("<br>", unsafe_allow_html=True)
             
         with col2_bottom:
+            on_time = (filtered_df['departure_delay'] <= 0).sum()
+            on_time_pct = (on_time / len(filtered_df) * 100)
             st.markdown(f"""
                 <div class="kpi-card">
-                    <div class="kpi-value">?</div>
-                    <div class="kpi-label">??</div>
+                    <div class="kpi-value">{on_time_pct:.1f}%</div>
+                    <div class="kpi-label">On-Time</div>
                 </div>
             """, unsafe_allow_html=True)
     
@@ -372,18 +369,6 @@ if df is not None:
         labels={'departure_delay': 'Average Delay (minutes)', 'date': ''}
     )
     
-    fig_line.add_hline(
-        y=15, 
-        line_dash="dash", 
-        line_color="red"
-    )
-    
-    fig_line.update_yaxes(
-        tickmode="array",
-        tickvals=[0, 15, 50, 100],
-        #ticktext=["0", "15 (On-Time)", "50", "100"]
-    )
-    
     fig_line.update_layout(height=350)
     st.plotly_chart(fig_line, use_container_width=True)
     
@@ -395,27 +380,42 @@ if df is not None:
         st.markdown("")
         airline_delays = filtered_df.groupby('airline').agg({
             'departure_delay': 'mean',
-            'flight': 'count'
+            'flight': 'count',
+            'origin': lambda x: ', '.join(sorted(x.unique()))
         }).sort_values('departure_delay', ascending=False).head(5)
-        airline_delays.columns = ['Avg Delay (min)', 'Flights']
+        airline_delays.columns = ['Avg Delay (min)', 'Flights', 'Airports']
         airline_delays = airline_delays.reset_index()
         airline_delays = airline_delays.rename(columns={'airline': 'Airline'})
         st.dataframe(airline_delays.style.format({
             'Avg Delay (min)': '{:.1f}',
             'Flights': '{:,}'
-        }), use_container_width=True, height=250)
+        }), use_container_width=True, hide_index=True)
     
     with col_b:
         st.subheader("Delays by Day of Week")
         dow_delays = filtered_df.groupby('day_of_week')['departure_delay'].mean().reindex(
             ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
         )
+        dow_df = pd.DataFrame({
+            'Day': dow_delays.index,
+            'Average Delay': dow_delays.values
+        })
+        
         fig_dow = px.bar(
-            x=dow_delays.index,
-            y=dow_delays.values,
-            labels={'x': '', 'y': 'Average Delay (minutes)'},
-            color=dow_delays.values,
-            color_continuous_scale='RdYlGn_r'
+            dow_df,
+            x='Day',
+            y='Average Delay',
+            color='Average Delay',
+            color_continuous_scale='RdYlGn_r',
+            custom_data=['Average Delay']
+        )
+        
+        fig_dow.update_traces(
+            hovertemplate=(
+                "<b>%{x}</b><br>" +
+                "Avg Delay: %{customdata[0]:.1f} min<br>" +
+                "<extra></extra>"
+            )
         )
         
         fig_dow.update_coloraxes(colorbar_title="Avg Delay", 
