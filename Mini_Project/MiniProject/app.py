@@ -229,8 +229,8 @@ if df is not None:
         with col2_bottom:
             st.markdown(f"""
                 <div class="kpi-card">
-                    <div class="kpi-value">{severe_pct:.1f}%</div>
-                    <div class="kpi-label">Severe Delays (>60 min)</div>
+                    <div class="kpi-value">?</div>
+                    <div class="kpi-label">??</div>
                 </div>
             """, unsafe_allow_html=True)
     
@@ -264,7 +264,7 @@ if df is not None:
     st.markdown("---")
     
     # Main visualizations
-    col_left, col_right = st.columns([1, 1.5])
+    col_left, col_sep, col_right = st.columns([0.9, 0.1, 0.9])
     
     with col_left:
         # Map
@@ -290,38 +290,50 @@ if df is not None:
             color_continuous_scale='RdYlGn_r',
             size_max=40,
             zoom=8,
-            height=700
+            height=650,
+            custom_data=['num_flights', 'avg_delay']
         )
 
-        fig_map.update_traces(marker=dict(size=30, opacity=0.6))
-        
+        fig_map.update_traces(
+            marker=dict(size=30, opacity=0.6),
+            hovertemplate=(
+                "<b>%{hovertext}</b><br><br>" +
+                "Avg Delay: %{customdata[1]:.1f} min<br>" +
+                "Total Flights: %{customdata[0]:,}<br>" +
+                "<extra></extra>"
+            )
+        )
+                
         fig_map.update_coloraxes(colorbar_title="Avg Delay", 
                                     colorbar_ticksuffix=" min", 
                                     colorbar_thickness=18,
                                     colorbar_len=0.9,
+                                    colorbar_y=0.5,
+                                    colorbar_yanchor="middle",
                                     colorbar_tickmode="linear",
                                     colorbar_tick0=0,
                                     colorbar_dtick=2)
 
         fig_map.update_layout(
             mapbox_style="open-street-map",
-            margin={"r": 0, "t": 0, "l": 0, "b": 0}
+            margin={"r": 0, "t": 0, "l": 0, "b": 0},
+            hoverlabel=dict(align="left")
         )
         
         st.plotly_chart(fig_map, use_container_width=True)
     
     with col_right:
-        top_right, bottom_right = st.container(), st.container()
-        with top_right:
+        #top_right, bottom_right = st.container(), st.container()
+        #with top_right:
             # Bar chart - Delays by Airport
             st.subheader("Average Delay by Airport")
             
             airport_delays = filtered_df.groupby('origin')['departure_delay'].mean().sort_values(ascending=True)
             
             fig_bar = go.Figure(go.Bar(
-                x=airport_delays.values,
-                y=airport_delays.index,
-                orientation='h',
+                x=airport_delays.index,
+                y=airport_delays.values,
+                orientation='v',
                 marker=dict(
                     color=airport_delays.values,
                     colorscale='RdYlGn_r',
@@ -333,18 +345,18 @@ if df is not None:
             
             max_delay = airport_delays.max()
             fig_bar.update_layout(
-                xaxis=dict(range=[0, max_delay*1.2]),
-                xaxis_title="Average Delay (minutes)",
-                yaxis_title="Airport",
-                height=400,
+                #xaxis=dict(range=[0, max_delay*1.2]),
+                yaxis_title="Average Delay (minutes)",
+                xaxis_title="Airport",
+                height=700,
                 showlegend=False,
                 margin=dict(l=100)
             )
             
             st.plotly_chart(fig_bar, use_container_width=True)
         
-        with bottom_right:
-            pass
+        #with bottom_right:
+        #    pass
     
     # Line chart - Delays over time
     st.markdown("---")
@@ -376,19 +388,22 @@ if df is not None:
     st.plotly_chart(fig_line, use_container_width=True)
     
     # Additional insights
-    col_a, col_spacer, col_b = st.columns([1, 0.1, 1])
+    col_a, col_spacer, col_b = st.columns([1, 0.1, 1.5])
     
     with col_a:
         st.subheader("Top Airlines by Delay")
+        st.markdown("")
         airline_delays = filtered_df.groupby('airline').agg({
             'departure_delay': 'mean',
             'flight': 'count'
-        }).sort_values('departure_delay', ascending=False).head(10)
+        }).sort_values('departure_delay', ascending=False).head(5)
         airline_delays.columns = ['Avg Delay (min)', 'Flights']
+        airline_delays = airline_delays.reset_index()
+        airline_delays = airline_delays.rename(columns={'airline': 'Airline'})
         st.dataframe(airline_delays.style.format({
             'Avg Delay (min)': '{:.1f}',
             'Flights': '{:,}'
-        }), use_container_width=True)
+        }), use_container_width=True, height=250)
     
     with col_b:
         st.subheader("Delays by Day of Week")
