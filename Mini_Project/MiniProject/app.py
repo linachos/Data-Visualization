@@ -235,30 +235,7 @@ if df is not None:
     
     with col3:
         st.subheader("On-Time Performance")
-        # Slider to choose delay threshold
-        max_delay = 90 # Cap at 90 minutes for better UX
-        delay_threshold = st.slider(
-            "Delay threshold (minutes)",
-            min_value=0,
-            max_value=max_delay,
-            value=15,
-            step=5
-        )
-
-        # Compute KPI dynamically
-        on_time_pct = (
-            (filtered_df['departure_delay'] <= delay_threshold).sum()
-            / len(filtered_df) * 100
-        )
-
-        st.markdown(f"""
-            <div class="kpi-card">
-                <div class="kpi-value">{on_time_pct:.1f}%</div>
-                <div class="kpi-label">
-                    Flights with delay ≤ {delay_threshold} min
-                </div>
-            </div>
-        """, unsafe_allow_html=True)
+        fig = px.area(filtered_df['departure_delay'])
     
     st.markdown("---")
     
