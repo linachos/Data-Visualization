@@ -4,6 +4,8 @@ import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime
 import numpy as np
+from matplotlib.colors import LinearSegmentedColormap
+
 
 # Page configuration
 st.set_page_config(
@@ -260,12 +262,12 @@ if df is not None:
     
     st.markdown("---")
     
-    # Main visualizations
+    # Middle part (Map & Bar-Chart)
     col_left, col_sep, col_right = st.columns([0.9, 0.1, 0.9])
     
     with col_left:
         # Map
-        st.subheader("Airport Locations & Delay Performance")
+        st.subheader("Airport Locations")
         
         airport_stats = filtered_df.groupby(['origin', 'origin_airport_name', 
                                             'origin_lat', 'origin_lon']).agg({
@@ -281,10 +283,11 @@ if df is not None:
             lon='lon',
             #size='num_flights',
             color='avg_delay',
+            text='origin',
             hover_name='airport_name',
             hover_data={'lat': False, 'lon': False, 
                         'avg_delay': ':.1f', 'num_flights': ':,'},
-            color_continuous_scale='RdYlGn_r',
+            #color_continuous_scale='RdYlGn_r',
             size_max=40,
             zoom=8,
             height=650,
@@ -292,24 +295,15 @@ if df is not None:
         )
 
         fig_map.update_traces(
-            marker=dict(size=30, opacity=0.6),
+            marker=dict(size=30, color='#444444'),
+            textfont=dict(size=12, color='white'),
             hovertemplate=(
                 "<b>%{hovertext}</b><br><br>" +
-                "Avg Delay: %{customdata[1]:.1f} min<br>" +
+                #"Avg Delay: %{customdata[1]:.1f} min<br>" +
                 "Total Flights: %{customdata[0]:,}<br>" +
                 "<extra></extra>"
             )
         )
-                
-        fig_map.update_coloraxes(colorbar_title="Avg Delay", 
-                                    colorbar_ticksuffix=" min", 
-                                    colorbar_thickness=18,
-                                    colorbar_len=0.9,
-                                    colorbar_y=0.5,
-                                    colorbar_yanchor="middle",
-                                    colorbar_tickmode="linear",
-                                    colorbar_tick0=0,
-                                    colorbar_dtick=2)
 
         fig_map.update_layout(
             mapbox_style="open-street-map",
@@ -323,34 +317,36 @@ if df is not None:
         #top_right, bottom_right = st.container(), st.container()
         #with top_right:
             # Bar chart - Delays by Airport
-            st.subheader("Average Delay by Airport")
-            
-            airport_delays = filtered_df.groupby('origin')['departure_delay'].mean().sort_values(ascending=True)
-            
-            fig_bar = go.Figure(go.Bar(
-                x=airport_delays.index,
-                y=airport_delays.values,
-                orientation='v',
-                marker=dict(
-                    color=airport_delays.values,
-                    colorscale='RdYlGn_r',
-                    showscale=False
-                ),
-                text=[f"{val:.1f} min" for val in airport_delays.values],
-                textposition='outside'
-            ))
-            
-            max_delay = airport_delays.max()
-            fig_bar.update_layout(
-                #xaxis=dict(range=[0, max_delay*1.2]),
-                yaxis_title="Average Delay (minutes)",
-                xaxis_title="Airport",
-                height=700,
-                showlegend=False,
-                margin=dict(l=100)
-            )
-            
-            st.plotly_chart(fig_bar, use_container_width=True)
+        st.subheader("Average Delay by Airport")
+        
+        airport_delays = filtered_df.groupby('origin')['departure_delay'].mean().sort_values(ascending=True)
+
+        fig_bar = go.Figure(go.Bar(
+            x=airport_delays.index,
+            y=airport_delays.values,
+            orientation='v',
+            marker=dict(
+                color=airport_delays.values,
+                cmin=0,
+                cmax=30,
+                colorscale=["#2dc937","#99c140","#e7b416","#db7b2b","#cc3232"],
+                showscale=True
+            ),
+            text=[f"{val:.1f} min" for val in airport_delays.values],
+            textposition='outside'
+        ))
+        
+        max_delay = airport_delays.max()
+        fig_bar.update_layout(
+            #xaxis=dict(range=[0, max_delay*1.2]),
+            yaxis_title="Average Delay (minutes)",
+            xaxis_title="Airport",
+            height=700,
+            showlegend=False,
+            margin=dict(l=100)
+        )
+        
+        st.plotly_chart(fig_bar, use_container_width=True)
         
         #with bottom_right:
         #    pass
@@ -406,7 +402,8 @@ if df is not None:
             x='Day',
             y='Average Delay',
             color='Average Delay',
-            color_continuous_scale='RdYlGn_r',
+            range_color=[0, 30],
+            color_continuous_scale=["#2dc937","#99c140","#e7b416","#db7b2b","#cc3232"],
             custom_data=['Average Delay']
         )
         
@@ -421,12 +418,12 @@ if df is not None:
         fig_dow.update_coloraxes(colorbar_title="Avg Delay", 
                                     colorbar_ticksuffix=" min", 
                                     colorbar_thickness=18,
-                                    colorbar_len=0.9,
+                                    colorbar_len=1.5,
                                     colorbar_tickmode="linear",
                                     colorbar_tick0=0,
-                                    colorbar_dtick=2)
+                                    colorbar_dtick=5)
         
-        fig_dow.update_layout(showlegend=False, height=300)
+        fig_dow.update_layout(showlegend=False, xaxis_title='', yaxis_title='Avg Delay (min)', height=300)
         st.plotly_chart(fig_dow, use_container_width=True)
         
         
