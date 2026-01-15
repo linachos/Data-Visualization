@@ -115,6 +115,9 @@ if df is not None:
         "### Port Authority of New York and New Jersey - 2024 Departures Delay Analysis"
     )
 
+    #########################################################################
+    # Sidebar
+
     # Sidebar filters
     st.sidebar.header("Filters")
     st.sidebar.markdown("---")
@@ -198,9 +201,11 @@ if df is not None:
     st.sidebar.markdown("---")
     st.sidebar.metric("Filtered Flights", f"{len(filtered_df_all):,}")
 
-    # KPIs & Area Chart
-    col1, col2, col_sep, col3 = st.columns([1, 1, 0.1, 2])
+    #########################################################################
+    # Upper Part: KPIs & Area Chart
 
+    col1, col2, col_sep, col3 = st.columns([1, 1, 0.1, 2])
+    # First 3 KPIs
     with col1:
         col1_top, col_sep1, col1_middle, col_sep2, col1_bottom = (
             st.container(),
@@ -251,7 +256,7 @@ if df is not None:
             """,
                 unsafe_allow_html=True,
             )
-
+    # Second three KPIs
     with col2:
         col2_top, col2_sep1, col2_middle, col2_sep2, col2_bottom = (
             st.container(),
@@ -302,7 +307,7 @@ if df is not None:
             """,
                 unsafe_allow_html=True,
             )
-
+    # Area Chart
     with col3:
         delay_threshold = np.linspace(0, 90, 19)
         cum_data = []
@@ -334,6 +339,7 @@ if df is not None:
             x="Delay Threshold",
             y="Percentage",
             color="Airport",
+            hover_data={"Airport": True},
             category_orders={
                 "Airport": sorted(filtered_df["origin"].unique(), reverse=True)
             },
@@ -341,7 +347,7 @@ if df is not None:
 
         fig_area.update_layout(
             title=dict(
-                text="Delay Performance<br><sub>Percentage of total flights with delay over threshold</sub>",
+                text="Delay Performance<br><sub>Percentage of total flights with delay ≥ threshold</sub>",
                 font=dict(size=20),
             ),
             yaxis_title="Total Flights Percentage",
@@ -350,15 +356,25 @@ if df is not None:
             legend=dict(yanchor="top", y=0.99, xanchor="left", x=0.85),
         )
 
+        fig_area.update_traces(
+            hovertemplate=(
+                "<b>%{customdata[0]}</b><br>"
+                + "Threshold: %{x}<br>"
+                + "Percentage: %{y:.2f} %<br>"
+                + "<extra></extra>"
+            )
+        )
+
         st.plotly_chart(fig_area, width="stretch")
 
     st.markdown("---")
 
-    # Middle part (Map & Bar-Chart)
-    col_left, col_sep, col_right = st.columns([0.9, 0.1, 0.9])
+    #########################################################################
+    # Middle Part: Map & Bar Chart
 
+    col_left, col_sep, col_right = st.columns([0.9, 0.1, 0.9])
+    # Map
     with col_left:
-        # Map
         st.subheader("Airport Locations")
 
         airport_stats = (
@@ -381,7 +397,6 @@ if df is not None:
             airport_stats,
             lat="lat",
             lon="lon",
-            # size='num_flights',
             color="avg_delay",
             text="origin",
             hover_name="airport_name",
@@ -391,10 +406,9 @@ if df is not None:
                 "avg_delay": ":.1f",
                 "num_flights": ":,",
             },
-            # color_continuous_scale='RdYlGn_r',
             size_max=40,
             zoom=8,
-            height=650,
+            height=620,
             custom_data=["num_flights", "avg_delay"],
         )
 
@@ -402,10 +416,8 @@ if df is not None:
             marker=dict(size=30, color="#444444"),
             textfont=dict(size=12, color="white"),
             hovertemplate=(
-                "<b>%{hovertext}</b><br><br>"
-                +
-                # "Avg Delay: %{customdata[1]:.1f} min<br>" +
-                "Total Flights: %{customdata[0]:,}<br>"
+                "<b>%{hovertext}</b><br>"
+                + "Total Flights: %{customdata[0]:,}<br>"
                 + "<extra></extra>"
             ),
         )
@@ -418,8 +430,8 @@ if df is not None:
 
         st.plotly_chart(fig_map, width="stretch")
 
+    # Bar chart - Delays by Airport
     with col_right:
-        # Bar chart - Delays by Airport
         st.subheader("Average Delay by Airport")
 
         airport_delays = (
@@ -440,8 +452,7 @@ if df is not None:
                     colorscale=["#2dc937", "#99c140", "#e7b416", "#db7b2b", "#cc3232"],
                     showscale=True,
                     colorbar=dict(
-                        title="Avg Delay",
-                        ticksuffix=" min",
+                        title="Avg Delay", ticksuffix=" min", len=1.1, thickness=18
                     ),
                 ),
                 text=[f"{val:.1f} min" for val in airport_delays.values],
@@ -451,18 +462,27 @@ if df is not None:
 
         max_delay = airport_delays.max()
         fig_bar.update_layout(
-            # xaxis=dict(range=[0, max_delay*1.2]),
-            yaxis_title="Average Delay (minutes)",
+            yaxis_title="Average Delay",
             xaxis_title="Airport",
-            height=700,
+            yaxis_ticksuffix=" min",
+            height=640,
             showlegend=False,
             margin=dict(l=100),
         )
 
+        fig_bar.update_traces(
+            hovertemplate=(
+                "<b>%{x}</b><br>" + "Avg Delay: %{y:.1f} min<br>" + "<extra></extra>"
+            ),
+        )
+
         st.plotly_chart(fig_bar, width="stretch")
 
-    # Line chart - Delays over time
+    #########################################################################
+    # Lower Part: Line Chart & Table & Bar Chart
+
     st.markdown("---")
+    # Line chart - Delays over time
     st.subheader("Delay Trends Over Time")
 
     time_series = filtered_df.groupby("date")["departure_delay"].mean().reset_index()
@@ -474,13 +494,16 @@ if df is not None:
         # title='Daily Average Departure Delays',
         labels={"departure_delay": "Average Delay (minutes)", "date": ""},
     )
-
+    fig_line.update_traces(
+        hovertemplate=(
+            "<b>%{x}</b><br>" + "Avg Delay: %{y:.1f} min<br>" + "<extra></extra>"
+        ),
+    )
     fig_line.update_layout(height=350)
     st.plotly_chart(fig_line, width="stretch")
 
-    # Additional insights
     col_a, col_spacer, col_b = st.columns([1, 0.1, 1.5])
-
+    # Table
     with col_a:
         st.subheader("Top Airlines by Delay")
         st.markdown("")
@@ -506,7 +529,7 @@ if df is not None:
             width="stretch",
             hide_index=True,
         )
-
+    # Bar Chart
     with col_b:
         st.subheader("Delays by Day of Week")
         dow_delays = (
@@ -567,9 +590,10 @@ if df is not None:
         )
         st.plotly_chart(fig_dow, width="stretch")
 
+    #########################################################################
     # Footer
     st.markdown("---")
-    st.markdown("*Data source: Bureau of Transportation Statistics (BTS) 2024*")
+    st.markdown("*Prototype of an interactive flight delays dashboard - Lina Sandberg*")
 
 else:
     st.error("Failed to load data. Please check that 'data/flight_data.xlsx' exists.")
