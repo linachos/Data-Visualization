@@ -191,19 +191,26 @@ if df is not None:
         & (df["date"] >= date_range[0])
         & (df["date"] <= date_range[1] if len(date_range) > 1 else date_range[0])
     )
-    filtered_df = df[mask].copy()
+    filtered_df_all = df[mask].copy()
+    filtered_df = filtered_df_all[filtered_df_all["departure"].notna()].copy()
 
     # Display filter summary
     st.sidebar.markdown("---")
-    st.sidebar.metric("Filtered Flights", f"{len(filtered_df):,}")
+    st.sidebar.metric("Filtered Flights", f"{len(filtered_df_all):,}")
 
-    # KPIs
-    col1, col2, col3 = st.columns([1, 1, 2])
+    # KPIs & Area Chart
+    col1, col2, col_sep, col3 = st.columns([1, 1, 0.1, 2])
 
     with col1:
-        col1_top, col_sep, col1_bottom = st.container(), st.container(), st.container()
+        col1_top, col_sep1, col1_middle, col_sep2, col1_bottom = (
+            st.container(),
+            st.container(),
+            st.container(),
+            st.container(),
+            st.container(),
+        )
         with col1_top:
-            total_flights = len(filtered_df)
+            total_flights = len(filtered_df_all)
             st.markdown(
                 f"""
                 <div class="kpi-card">
@@ -214,7 +221,23 @@ if df is not None:
                 unsafe_allow_html=True,
             )
 
-        with col_sep:
+        with col_sep1:
+            st.markdown("<br>", unsafe_allow_html=True)
+
+        with col1_middle:
+            on_time = (filtered_df["departure_delay"] <= 0).sum()
+            on_time_pct = on_time / len(filtered_df) * 100
+            st.markdown(
+                f"""
+                <div class="kpi-card">
+                    <div class="kpi-value">{on_time_pct:.1f}%</div>
+                    <div class="kpi-label">On-Time (or early)</div>
+                </div>
+            """,
+                unsafe_allow_html=True,
+            )
+
+        with col_sep2:
             st.markdown("<br>", unsafe_allow_html=True)
 
         with col1_bottom:
@@ -230,8 +253,29 @@ if df is not None:
             )
 
     with col2:
-        col2_top, col_sep, col2_bottom = st.container(), st.container(), st.container()
+        col2_top, col2_sep1, col2_middle, col2_sep2, col2_bottom = (
+            st.container(),
+            st.container(),
+            st.container(),
+            st.container(),
+            st.container(),
+        )
         with col2_top:
+            cancelled = filtered_df_all["departure_delay"].isna().sum()
+            st.markdown(
+                f"""
+                <div class="kpi-card">
+                    <div class="kpi-value">{cancelled}</div>
+                    <div class="kpi-label">Number of cancelled flights</div>
+                </div>
+            """,
+                unsafe_allow_html=True,
+            )
+
+        with col2_sep1:
+            st.markdown("<br>", unsafe_allow_html=True)
+
+        with col2_middle:
             severely_delayed = (filtered_df["departure_delay"] > 60).sum()
             severe_pct = severely_delayed / len(filtered_df) * 100
             st.markdown(
@@ -244,38 +288,31 @@ if df is not None:
                 unsafe_allow_html=True,
             )
 
-        with col_sep:
+        with col2_sep2:
             st.markdown("<br>", unsafe_allow_html=True)
 
         with col2_bottom:
-            on_time = (filtered_df["departure_delay"] <= 0).sum()
-            on_time_pct = on_time / len(filtered_df) * 100
+            median_delay = filtered_df["departure_delay"].median()
             st.markdown(
                 f"""
                 <div class="kpi-card">
-                    <div class="kpi-value">{on_time_pct:.1f}%</div>
-                    <div class="kpi-label">On-Time</div>
+                    <div class="kpi-value">{median_delay:.1f} min</div>
+                    <div class="kpi-label">Median Delay</div>
                 </div>
             """,
                 unsafe_allow_html=True,
             )
 
     with col3:
-        st.subheader("On-Time Performance")
-
-        delay_threshold = np.linspace(0, 90, 20)
+        delay_threshold = np.linspace(0, 90, 19)
         cum_data = []
         filtered_df_clip = filtered_df.copy()
-        # filtered_df_clip["departure_delay"] = filtered_df["departure_delay"].clip(lower=0)
         for threshold in delay_threshold:
             # Get all flights meeting the threshold
-            delayed_flights = filtered_df_clip[
-                filtered_df_clip["departure_delay"] >= threshold
-            ]
+            delayed_flights = filtered_df[filtered_df["departure_delay"] >= threshold]
 
             # Count flights per airport
             airport_counts = delayed_flights.groupby("origin").size()
-
             airport_total = filtered_df.groupby("origin").count()
             # airport_total.loc[airport].iloc[0]
 
@@ -285,7 +322,7 @@ if df is not None:
                 cum_data.append(
                     {
                         "Airport": airport,
-                        "Delay Threshold (min)": threshold,
+                        "Delay Threshold": threshold,
                         "Percentage": pct,
                     }
                 )
@@ -294,14 +331,26 @@ if df is not None:
 
         fig_area = px.area(
             cum_df,
-            x="Delay Threshold (min)",
+            x="Delay Threshold",
             y="Percentage",
             color="Airport",
             category_orders={
                 "Airport": sorted(filtered_df["origin"].unique(), reverse=True)
             },
         )
-        st.plotly_chart(fig_area, use_container_width=True)
+
+        fig_area.update_layout(
+            title=dict(
+                text="Delay Performance<br><sub>Percentage of total flights with delay over threshold</sub>",
+                font=dict(size=20),
+            ),
+            yaxis_title="Total Flights Percentage",
+            yaxis_ticksuffix=" %",
+            xaxis_ticksuffix=" min",
+            legend=dict(yanchor="top", y=0.99, xanchor="left", x=0.85),
+        )
+
+        st.plotly_chart(fig_area, width="stretch")
 
     st.markdown("---")
 
@@ -328,7 +377,7 @@ if df is not None:
             "num_flights",
         ]
 
-        fig_map = px.scatter_mapbox(
+        fig_map = px.scatter_map(
             airport_stats,
             lat="lat",
             lon="lon",
@@ -367,11 +416,9 @@ if df is not None:
             hoverlabel=dict(align="left"),
         )
 
-        st.plotly_chart(fig_map, use_container_width=True)
+        st.plotly_chart(fig_map, width="stretch")
 
     with col_right:
-        # top_right, bottom_right = st.container(), st.container()
-        # with top_right:
         # Bar chart - Delays by Airport
         st.subheader("Average Delay by Airport")
 
@@ -392,6 +439,10 @@ if df is not None:
                     cmax=30,
                     colorscale=["#2dc937", "#99c140", "#e7b416", "#db7b2b", "#cc3232"],
                     showscale=True,
+                    colorbar=dict(
+                        title="Avg Delay",
+                        ticksuffix=" min",
+                    ),
                 ),
                 text=[f"{val:.1f} min" for val in airport_delays.values],
                 textposition="outside",
@@ -408,10 +459,7 @@ if df is not None:
             margin=dict(l=100),
         )
 
-        st.plotly_chart(fig_bar, use_container_width=True)
-
-        # with bottom_right:
-        #    pass
+        st.plotly_chart(fig_bar, width="stretch")
 
     # Line chart - Delays over time
     st.markdown("---")
@@ -428,7 +476,7 @@ if df is not None:
     )
 
     fig_line.update_layout(height=350)
-    st.plotly_chart(fig_line, use_container_width=True)
+    st.plotly_chart(fig_line, width="stretch")
 
     # Additional insights
     col_a, col_spacer, col_b = st.columns([1, 0.1, 1.5])
@@ -455,7 +503,7 @@ if df is not None:
             airline_delays.style.format(
                 {"Avg Delay (min)": "{:.1f}", "Flights": "{:,}"}
             ),
-            use_container_width=True,
+            width="stretch",
             hide_index=True,
         )
 
@@ -517,7 +565,7 @@ if df is not None:
         fig_dow.update_layout(
             showlegend=False, xaxis_title="", yaxis_title="Avg Delay (min)", height=300
         )
-        st.plotly_chart(fig_dow, use_container_width=True)
+        st.plotly_chart(fig_dow, width="stretch")
 
     # Footer
     st.markdown("---")
