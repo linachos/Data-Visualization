@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approaching Climate Tipping Points</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0 0 10px 0;
+            color: #fff;
+            font-weight: bold;
+        }
+        .subtitle {
+            color: #ff6b6b;
+            font-size: 1.3em;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+        .description {
+            color: #a0a0a0;
+            font-size: 1em;
+            margin: 15px 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        .tipping-point {
+            margin: 30px 0;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .tp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .tp-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #fff;
+            flex: 1;
+        }
+        .tp-percentage {
+            font-size: 2em;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+        .tp-description {
+            color: #a0a0a0;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .progress-container {
+            position: relative;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%;
+            border-radius: 20px;
+            transition: width 1s ease-out;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 15px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .progress-marker {
+            position: absolute;
+            top: -25px;
+            transform: translateX(-50%);
+            font-size: 0.8em;
+            color: #fff;
+            white-space: nowrap;
+        }
+        .safe { background: linear-gradient(90deg, #10b981 0%, #34d399 100%); color: #fff; }
+        .warning { background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%); color: #000; }
+        .danger { background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%); color: #fff; }
+        .critical { background: linear-gradient(90deg, #7f1d1d 0%, #991b1b 100%); color: #fff; }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .legend-box {
+            width: 30px;
+            height: 20px;
+            border-radius: 5px;
+        }
+        .legend-text {
+            color: #fff;
+            font-size: 0.9em;
+        }
+        .warning-box {
+            background: rgba(255, 107, 107, 0.2);
+            border: 2px solid #ff6b6b;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .warning-box p {
+            color: #fff;
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+        .warning-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚠️ Approaching Climate Tipping Points ⚠️</h1>
+            <div class="subtitle">Critical Thresholds at Risk</div>
+            <div class="description">
+                Tipping points are thresholds beyond which small changes can lead to dramatic, 
+                often irreversible shifts in Earth's climate system. Once crossed, these changes 
+                may be impossible to reverse on human timescales.
+            </div>
+        </div>
+
+        <div class="tipping-points">
+            <!-- Arctic Summer Ice -->
+            <div class="tipping-point">
+                <div class="tp-header">
+                    <div class="tp-name">🧊 Arctic Summer Sea Ice</div>
+                    <div class="tp-percentage critical">87%</div>
+                </div>
+                <div class="tp-description">
+                    September sea ice extent has declined 13% per decade since 1979. 
+                    Ice-free summers projected by 2040s, triggering feedback loops that accelerate warming.
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar critical" style="width: 87%">
+                        <span>CRITICAL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Greenland Ice Sheet -->
+            <div class="tipping-point">
+                <div class="tp-header">
+                    <div class="tp-name">🏔️ Greenland Ice Sheet</div>
+                    <div class="tp-percentage danger">75%</div>
+                </div>
+                <div class="tp-description">
+                    Current warming of ~1.2°C approaches the 1.5-2°C threshold for irreversible melting. 
+                    Complete loss would raise sea levels by 7 meters over centuries.
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar danger" style="width: 75%">
+                        <span>DANGEROUS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Amazon Rainforest -->
+            <div class="tipping-point">
+                <div class="tp-header">
+                    <div class="tp-name">🌳 Amazon Rainforest Dieback</div>
+                    <div class="tp-percentage danger">68%</div>
+                </div>
+                <div class="tp-description">
+                    Approximately 17% deforested; 20-25% is critical threshold for self-sustaining collapse. 
+                    Combined with drought and warming, the Amazon risks becoming savanna.
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar danger" style="width: 68%">
+                        <span>DANGEROUS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AMOC -->
+            <div class="tipping-point">
+                <div class="tp-header">
+                    <div class="tp-name">🌊 Atlantic Ocean Circulation (AMOC)</div>
+                    <div class="tp-percentage warning">55%</div>
+                </div>
+                <div class="tp-description">
+                    AMOC has weakened by ~15% since mid-20th century. Collapse would cause 
+                    dramatic cooling in Europe, shifts in tropical rainfall, and accelerated sea level rise.
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar warning" style="width: 55%">
+                        <span>WARNING</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- West Antarctic Ice Sheet -->
+            <div class="tipping-point">
+                <div class="tp-header">
+                    <div class="tp-name">🗻 West Antarctic Ice Sheet</div>
+                    <div class="tp-percentage danger">70%</div>
+                </div>
+                <div class="tp-description">
+                    Warm ocean water undermining ice shelves. Threshold may already be crossed; 
+                    complete loss would raise sea levels by 3-5 meters over centuries.
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar danger" style="width: 70%">
+                        <span>DANGEROUS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coral Reefs -->
+            <div class="tipping-point">
+                <div class="tp-header">
+                    <div class="tp-name">🪸 Coral Reef Die-Off</div>
+                    <div class="tp-percentage critical">90%</div>
+                </div>
+                <div class="tp-description">
+                    At 1.5°C warming, 70-90% of coral reefs will die. At 2°C, >99% will be lost. 
+                    Half of Great Barrier Reef already bleached. Threatens marine ecosystems and 500M+ people.
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar critical" style="width: 90%">
+                        <span>CRITICAL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Permafrost -->
+            <div class="tipping-point">
+                <div class="tp-header">
+                    <div class="tp-name">❄️ Permafrost Carbon Release</div>
+                    <div class="tp-percentage danger">65%</div>
+                </div>
+                <div class="tp-description">
+                    Thawing permafrost could release 1,400+ gigatons of CO₂ and methane, 
+                    creating a self-reinforcing feedback loop. Already accelerating in Arctic regions.
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar danger" style="width: 65%">
+                        <span>DANGEROUS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boreal Forest -->
+            <div class="tipping-point">
+                <div class="tp-header">
+                    <div class="tp-name">🌲 Boreal Forest Shift</div>
+                    <div class="tp-percentage warning">50%</div>
+                </div>
+                <div class="tp-description">
+                    Northern forests face increasing fire, drought, and pest outbreaks. 
+                    Shift from carbon sink to source would accelerate warming and alter regional climates.
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar warning" style="width: 50%">
+                        <span>WARNING</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-box safe"></div>
+                <span class="legend-text">0-40% (Safe)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box warning"></div>
+                <span class="legend-text">41-60% (Warning)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box danger"></div>
+                <span class="legend-text">61-80% (Dangerous)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box critical"></div>
+                <span class="legend-text">81-100% (Critical)</span>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <div class="warning-icon">⚠️</div>
+            <p><strong>Multiple tipping points may trigger cascading effects</strong></p>
+            <p>Once one threshold is crossed, it may push others past their limits</p>
+        </div>
+
+        <div style="margin-top: 30px; text-align: center; color: #888; font-size: 0.9em;">
+            <p>Sources: IPCC AR6, Nature Climate Change, Armstrong McKay et al. (2022)</p>
+            <p>Percentages represent proximity to critical thresholds based on current scientific literature</p>
+        </div>
+    </div>
+
+    <script>
+        // Animate progress bars on load
+        window.addEventListener('load', () => {
+            const bars = document.querySelectorAll('.progress-bar');
+            bars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
