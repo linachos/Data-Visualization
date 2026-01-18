@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="640.8pt" height="424.917pt" viewBox="0 0 640.8 424.917" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="640.8pt" height="424.660594pt" viewBox="0 0 640.8 424.660594" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-01-17T22:10:16.051476</dc:date>
+    <dc:date>2026-01-18T10:19:30.315598</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -21,8 +21,8 @@
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 424.917 
-L 640.8 424.917 
+   <path d="M 0 424.660594 
+L 640.8 424.660594 
 L 640.8 0 
 L 0 0 
 z
@@ -30,62 +30,62 @@ z
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 570.96 372.570188 
-C 570.96 303.9786 544.543769 238.126181 497.572675 189.624604 
-C 450.601581 141.123027 386.827158 113.846063 320.4 113.846063 
-C 253.972842 113.846063 190.198419 141.123027 143.227325 189.624604 
-C 96.256231 238.126181 69.84 303.9786 69.84 372.570187 
-L 122.04 372.570188 
-C 122.04 318.268514 142.95285 266.135349 180.138299 227.738267 
-C 217.323748 189.341186 267.811834 167.746922 320.4 167.746922 
-C 372.988166 167.746922 423.476252 189.341186 460.661701 227.738267 
-C 497.84715 266.135349 518.76 318.268514 518.76 372.570188 
+    <path d="M 570.96 373.470187 
+C 570.96 304.699647 544.543769 238.675423 497.572675 190.047307 
+C 450.601581 141.419192 386.827158 114.071062 320.4 114.071062 
+C 253.972842 114.071062 190.198419 141.419192 143.227325 190.047307 
+C 96.256231 238.675423 69.84 304.699647 69.84 373.470187 
+L 122.04 373.470187 
+C 122.04 319.026843 142.95285 266.757665 180.138299 228.260407 
+C 217.323748 189.763149 267.811834 168.112547 320.4 168.112547 
+C 372.988166 168.112547 423.476252 189.763149 460.661701 228.260407 
+C 497.84715 266.757665 518.76 319.026843 518.76 373.470187 
 z
-" clip-path="url(#p671b451fd3)" style="stroke: #666666; stroke-width: 2; stroke-linejoin: miter"/>
+" clip-path="url(#p38c88093fa)" style="stroke: #666666; stroke-width: 2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
-    <path d="M 195.12 148.508523 
-C 157.032902 171.214617 125.398271 203.880016 103.408675 243.208125 
-C 81.419079 282.536234 69.84 327.157999 69.84 372.570187 
-L 122.04 372.570188 
-C 122.04 336.618872 131.206771 301.293308 148.615201 270.158555 
-C 166.023631 239.023802 191.067714 213.163694 221.22 195.188036 
+    <path d="M 195.12 148.823956 
+C 157.032902 171.589289 125.398271 204.339911 103.408675 243.770625 
+C 81.419079 283.201339 69.84 327.939521 69.84 373.470187 
+L 122.04 373.470187 
+C 122.04 337.425076 131.206771 302.007349 148.615201 270.791367 
+C 166.023631 239.575385 191.067714 213.64781 221.22 195.625254 
 z
-" clip-path="url(#p671b451fd3)" style="fill: #2dc937; opacity: 0.7"/>
+" clip-path="url(#p38c88093fa)" style="fill: #2dc937; opacity: 0.7"/>
    </g>
    <g id="patch_4">
-    <path d="M 320.4 113.846063 
-C 298.503341 113.846063 276.700849 116.809941 255.5503 122.661873 
-C 234.399751 128.513805 214.083063 137.203458 195.12 148.508523 
-L 221.22 195.188036 
-C 236.232425 186.238193 252.31647 179.358885 269.060654 174.726105 
-C 285.804839 170.093326 303.065145 167.746922 320.4 167.746922 
+    <path d="M 320.4 114.071062 
+C 298.503341 114.071062 276.700849 117.042674 255.5503 122.909873 
+C 234.399751 128.777073 214.083063 137.489396 195.12 148.823956 
+L 221.22 195.625254 
+C 236.232425 186.652061 252.31647 179.754805 269.060654 175.109939 
+C 285.804839 170.465073 303.065145 168.112547 320.4 168.112547 
 z
-" clip-path="url(#p671b451fd3)" style="fill: #e7b416; opacity: 0.8"/>
+" clip-path="url(#p38c88093fa)" style="fill: #e7b416; opacity: 0.8"/>
    </g>
    <g id="patch_5">
-    <path d="M 445.68 148.508523 
-C 426.716937 137.203458 406.400249 128.513805 385.2497 122.661873 
-C 364.099151 116.809941 342.296659 113.846063 320.4 113.846063 
-L 320.4 167.746922 
-C 337.734855 167.746922 354.995161 170.093326 371.739346 174.726105 
-C 388.48353 179.358885 404.567575 186.238193 419.58 195.188036 
+    <path d="M 445.68 148.823956 
+C 426.716937 137.489396 406.400249 128.777073 385.2497 122.909873 
+C 364.099151 117.042674 342.296659 114.071062 320.4 114.071062 
+L 320.4 168.112547 
+C 337.734855 168.112547 354.995161 170.465073 371.739346 175.109939 
+C 388.48353 179.754805 404.567575 186.652061 419.58 195.625254 
 z
-" clip-path="url(#p671b451fd3)" style="fill: #db7b2b; opacity: 0.8"/>
+" clip-path="url(#p38c88093fa)" style="fill: #db7b2b; opacity: 0.8"/>
    </g>
    <g id="patch_6">
-    <path d="M 570.96 372.570188 
-C 570.96 327.157999 559.380921 282.536234 537.391325 243.208125 
-C 515.401729 203.880016 483.767098 171.214617 445.68 148.508523 
-L 419.58 195.188036 
-C 449.732286 213.163694 474.776369 239.023802 492.184799 270.158555 
-C 509.593229 301.293308 518.76 336.618872 518.76 372.570188 
+    <path d="M 570.96 373.470187 
+C 570.96 327.939521 559.380921 283.201339 537.391325 243.770625 
+C 515.401729 204.339911 483.767098 171.589289 445.68 148.823956 
+L 419.58 195.625254 
+C 449.732286 213.64781 474.776369 239.575385 492.184799 270.791367 
+C 509.593229 302.007349 518.76 337.425076 518.76 373.470187 
 z
-" clip-path="url(#p671b451fd3)" style="fill: #cc3232; opacity: 0.8"/>
+" clip-path="url(#p38c88093fa)" style="fill: #cc3232; opacity: 0.8"/>
    </g>
    <g id="text_1">
     <!-- °C -->
-    <g style="fill: #cccccc" transform="translate(301.0875 270.648453) scale(0.5 -0.5)">
+    <g style="fill: #cccccc" transform="translate(301.0875 271.239078) scale(0.5 -0.5)">
      <defs>
       <path id="LCDReg-b0" d="M 1766 2984 
 L 1916 3847 
@@ -177,59 +177,59 @@ z
     </g>
    </g>
    <g id="line2d_1">
-    <path d="M 90.72 372.570187 
-L 48.96 372.570187 
-" clip-path="url(#p671b451fd3)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
+    <path d="M 90.72 373.470187 
+L 48.96 373.470187 
+" clip-path="url(#p38c88093fa)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
-    <path d="M 121.491285 253.988297 
-L 85.326064 232.427953 
-" clip-path="url(#p671b451fd3)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
+    <path d="M 121.491285 254.578922 
+L 85.326064 232.962328 
+" clip-path="url(#p38c88093fa)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_3">
-    <path d="M 205.56 167.180328 
-L 184.68 129.836717 
-" clip-path="url(#p671b451fd3)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
+    <path d="M 205.56 167.544475 
+L 184.68 130.103436 
+" clip-path="url(#p38c88093fa)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_4">
-    <path d="M 320.4 135.406406 
-L 320.4 92.285719 
-" clip-path="url(#p671b451fd3)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+    <path d="M 320.4 135.687656 
+L 320.4 92.454469 
+" clip-path="url(#p38c88093fa)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
    </g>
    <g id="line2d_5">
-    <path d="M 435.24 167.180328 
-L 456.12 129.836717 
-" clip-path="url(#p671b451fd3)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+    <path d="M 435.24 167.544475 
+L 456.12 130.103436 
+" clip-path="url(#p38c88093fa)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
    </g>
    <g id="line2d_6">
-    <path d="M 519.308715 253.988297 
-L 555.473936 232.427953 
-" clip-path="url(#p671b451fd3)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
+    <path d="M 519.308715 254.578922 
+L 555.473936 232.962328 
+" clip-path="url(#p38c88093fa)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_7">
-    <path d="M 550.08 372.570188 
-L 591.84 372.570188 
-" clip-path="url(#p671b451fd3)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
+    <path d="M 550.08 373.470187 
+L 591.84 373.470187 
+" clip-path="url(#p38c88093fa)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
    </g>
    <g id="patch_7">
-    <path d="M 243.129162 172.27385 
-L 265.40444 186.31934 
-L 250.953234 192.26359 
-L 320.496988 372.530293 
-L 320.303012 372.610082 
-L 250.759258 192.343378 
-L 236.308052 198.287629 
+    <path d="M 243.129162 172.651286 
+L 265.40444 186.733419 
+L 250.953234 192.693178 
+L 320.496988 373.430189 
+L 320.303012 373.510186 
+L 250.759258 192.773175 
+L 236.308052 198.732933 
 z
-" clip-path="url(#p671b451fd3)" style="fill: #ffffff; stroke: #ffffff; stroke-width: 4; stroke-linejoin: miter"/>
+" clip-path="url(#p38c88093fa)" style="fill: #ffffff; stroke: #ffffff; stroke-width: 4; stroke-linejoin: miter"/>
    </g>
    <g id="line2d_8">
-    <path d="M 235.402078 152.244217 
-L 219.947911 112.184949 
-" clip-path="url(#p671b451fd3)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+    <path d="M 235.402078 152.569396 
+L 219.947911 112.405616 
+" clip-path="url(#p38c88093fa)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
    </g>
    <g id="text_2">
     <!-- 0.0 -->
-    <g style="fill: #cccccc" transform="translate(16.083125 379.23425) scale(0.2 -0.2)">
+    <g style="fill: #cccccc" transform="translate(16.083125 380.13425) scale(0.2 -0.2)">
      <defs>
       <path id="LCDReg-30" d="M 600 2134 
 L 809 1878 
@@ -303,7 +303,7 @@ z
    </g>
    <g id="text_3">
     <!-- 0.5 -->
-    <g style="fill: #cccccc" transform="translate(55.509079 228.311844) scale(0.2 -0.2)">
+    <g style="fill: #cccccc" transform="translate(55.509079 228.818094) scale(0.2 -0.2)">
      <defs>
       <path id="LCDReg-35" d="M 2506 3753 
 L 1147 3753 
@@ -362,7 +362,7 @@ z
    </g>
    <g id="text_4">
     <!-- 1.0 -->
-    <g style="fill: #cccccc" transform="translate(164.89 117.828974) scale(0.2 -0.2)">
+    <g style="fill: #cccccc" transform="translate(164.89 118.046979) scale(0.2 -0.2)">
      <defs>
       <path id="LCDReg-31" d="M 1059 3753 
 L 644 3753 
@@ -395,7 +395,7 @@ z
    </g>
    <g id="text_5">
     <!-- 1.5 -->
-    <g style="fill: #db7b2b" transform="translate(309.040625 79.055453) scale(0.25 -0.25)">
+    <g style="fill: #db7b2b" transform="translate(309.040625 79.167953) scale(0.25 -0.25)">
      <use xlink:href="#LCDReg-31"/>
      <use xlink:href="#LCDReg-2e" transform="translate(22.84375 0)"/>
      <use xlink:href="#LCDReg-35" transform="translate(44.181641 0)"/>
@@ -403,7 +403,7 @@ z
    </g>
    <g id="text_6">
     <!-- 2.0 -->
-    <g style="fill: #cc3232" transform="translate(451.892031 119.49499) scale(0.25 -0.25)">
+    <g style="fill: #cc3232" transform="translate(451.892031 119.712995) scale(0.25 -0.25)">
      <defs>
       <path id="LCDReg-32" d="M 2434 3753 
 L 1053 3753 
@@ -462,7 +462,7 @@ z
    </g>
    <g id="text_7">
     <!-- 2.5 -->
-    <g style="fill: #cccccc" transform="translate(562.084671 228.311844) scale(0.2 -0.2)">
+    <g style="fill: #cccccc" transform="translate(562.084671 228.818094) scale(0.2 -0.2)">
      <use xlink:href="#LCDReg-32"/>
      <use xlink:href="#LCDReg-2e" transform="translate(46.679688 0)"/>
      <use xlink:href="#LCDReg-35" transform="translate(68.017578 0)"/>
@@ -470,7 +470,7 @@ z
    </g>
    <g id="text_8">
     <!-- 3.0 -->
-    <g style="fill: #cccccc" transform="translate(601.387187 379.23425) scale(0.2 -0.2)">
+    <g style="fill: #cccccc" transform="translate(601.387187 380.13425) scale(0.2 -0.2)">
      <defs>
       <path id="LCDReg-33" d="M 2084 3753 
 L 753 3753 
@@ -532,7 +532,7 @@ z
    </g>
    <g id="text_9">
     <!-- 1.14 -->
-    <g style="fill: #e7b416" transform="translate(198.849733 100.485394) scale(0.25 -0.25)">
+    <g style="fill: #e7b416" transform="translate(198.849733 100.653804) scale(0.25 -0.25)">
      <defs>
       <path id="LCDReg-34" d="M 1022 4053 
 L 741 2447 
@@ -580,7 +580,7 @@ z
    </g>
    <g id="text_10">
     <!-- GLOBAL TEMPERATURE -->
-    <g style="fill: #cccccc" transform="translate(200.819531 27.398438) scale(0.3 -0.3)">
+    <g style="fill: #cccccc" transform="translate(200.819531 27.398437) scale(0.3 -0.3)">
      <defs>
       <path id="LCDReg-47" d="M 2594 3753 
 L 1244 3753 
@@ -1130,7 +1130,7 @@ z
    </g>
    <g id="text_11">
     <!-- Warming compared to pre-industrial (Jan 1951-Dec 1980 average) -->
-    <g style="fill: #cccccc" transform="translate(70.548437 49.027531) scale(0.2 -0.2)">
+    <g style="fill: #cccccc" transform="translate(70.548437 49.083781) scale(0.2 -0.2)">
      <defs>
       <path id="LCDReg-57" d="M 656 513 
 L 1922 513 
@@ -2269,8 +2269,8 @@ z
     </g>
    </g>
    <g id="text_12">
-    <!-- Sources: IPCC Special Report on 1.5°C (2018) | Paris Agreement (2015) -->
-    <g style="fill: #666666" transform="translate(146.482344 402.883188) scale(0.13 -0.13)">
+    <!-- Sources: IPCC Special Report (2018) | Paris Agreement (2015) | IPCC AR6 (2023) -->
+    <g style="fill: #666666" transform="translate(122.396797 403.839437) scale(0.13 -0.13)">
      <defs>
       <path id="LCDReg-53" d="M 1225 3753 
 L 988 4053 
@@ -2365,6 +2365,69 @@ L 1441 -1066
 L 1441 4266 
 z
 " transform="scale(0.015625)"/>
+      <path id="LCDReg-36" d="M 2591 3753 
+L 1238 3753 
+L 997 4053 
+L 1150 4166 
+Q 1247 4238 1291 4250 
+Q 1338 4266 1456 4266 
+L 2681 4266 
+L 2891 4009 
+L 2591 3753 
+z
+M 1128 3691 
+L 913 2466 
+L 609 2209 
+L 400 2466 
+L 594 3572 
+Q 622 3731 741 3828 
+L 916 3963 
+L 1128 3691 
+z
+M 997 2391 
+L 2128 2391 
+Q 2231 2391 2272 2369 
+Q 2309 2353 2369 2278 
+L 2481 2134 
+L 2166 1878 
+L 906 1878 
+L 697 2134 
+L 997 2391 
+z
+M 797 1813 
+L 578 578 
+L 269 300 
+L 138 431 
+Q 75 494 75 584 
+Q 75 625 88 691 
+L 284 1813 
+L 584 2069 
+L 797 1813 
+z
+M 2028 563 
+L 2247 1809 
+L 2553 2050 
+L 2669 1878 
+Q 2734 1781 2734 1744 
+Q 2734 1672 2716 1566 
+L 2566 722 
+Q 2531 522 2413 422 
+L 2241 281 
+L 2028 563 
+z
+M 666 513 
+L 1925 513 
+L 2156 206 
+L 2044 113 
+Q 1959 41 1893 20 
+Q 1828 0 1691 0 
+L 722 0 
+Q 541 0 497 25 
+Q 450 47 394 113 
+L 316 206 
+L 666 513 
+z
+" transform="scale(0.015625)"/>
      </defs>
      <use xlink:href="#LCDReg-53"/>
      <use xlink:href="#LCDReg-6f" transform="translate(49.316406 0)"/>
@@ -2395,106 +2458,106 @@ z
      <use xlink:href="#LCDReg-72" transform="translate(1051.830078 0)"/>
      <use xlink:href="#LCDReg-74" transform="translate(1097.146484 0)"/>
      <use xlink:href="#LCDReg-20" transform="translate(1139.822266 0)"/>
-     <use xlink:href="#LCDReg-6f" transform="translate(1164.822266 0)"/>
-     <use xlink:href="#LCDReg-6e" transform="translate(1214.138672 0)"/>
-     <use xlink:href="#LCDReg-20" transform="translate(1263.455078 0)"/>
-     <use xlink:href="#LCDReg-31" transform="translate(1288.455078 0)"/>
-     <use xlink:href="#LCDReg-2e" transform="translate(1311.298828 0)"/>
-     <use xlink:href="#LCDReg-35" transform="translate(1332.636719 0)"/>
-     <use xlink:href="#LCDReg-b0" transform="translate(1379.316406 0)"/>
-     <use xlink:href="#LCDReg-43" transform="translate(1413.886719 0)"/>
-     <use xlink:href="#LCDReg-20" transform="translate(1456.5625 0)"/>
-     <use xlink:href="#LCDReg-28" transform="translate(1481.5625 0)"/>
-     <use xlink:href="#LCDReg-32" transform="translate(1508.222656 0)"/>
-     <use xlink:href="#LCDReg-30" transform="translate(1554.902344 0)"/>
-     <use xlink:href="#LCDReg-31" transform="translate(1599.96875 0)"/>
-     <use xlink:href="#LCDReg-38" transform="translate(1623.3125 0)"/>
-     <use xlink:href="#LCDReg-29" transform="translate(1672.677734 0)"/>
-     <use xlink:href="#LCDReg-20" transform="translate(1699.337891 0)"/>
-     <use xlink:href="#LCDReg-7c" transform="translate(1724.337891 0)"/>
-     <use xlink:href="#LCDReg-20" transform="translate(1774.337891 0)"/>
-     <use xlink:href="#LCDReg-50" transform="translate(1799.337891 0)"/>
-     <use xlink:href="#LCDReg-61" transform="translate(1843.835938 0)"/>
-     <use xlink:href="#LCDReg-72" transform="translate(1893.152344 0)"/>
-     <use xlink:href="#LCDReg-69" transform="translate(1938.21875 0)"/>
-     <use xlink:href="#LCDReg-73" transform="translate(1956.871094 0)"/>
-     <use xlink:href="#LCDReg-20" transform="translate(2006.1875 0)"/>
-     <use xlink:href="#LCDReg-41" transform="translate(2031.1875 0)"/>
-     <use xlink:href="#LCDReg-67" transform="translate(2076.503906 0)"/>
-     <use xlink:href="#LCDReg-72" transform="translate(2121.001953 0)"/>
-     <use xlink:href="#LCDReg-65" transform="translate(2166.068359 0)"/>
-     <use xlink:href="#LCDReg-65" transform="translate(2208.744141 0)"/>
-     <use xlink:href="#LCDReg-6d" transform="translate(2251.419922 0)"/>
-     <use xlink:href="#LCDReg-65" transform="translate(2300.736328 0)"/>
-     <use xlink:href="#LCDReg-6e" transform="translate(2343.412109 0)"/>
-     <use xlink:href="#LCDReg-74" transform="translate(2392.728516 0)"/>
-     <use xlink:href="#LCDReg-20" transform="translate(2435.404297 0)"/>
-     <use xlink:href="#LCDReg-28" transform="translate(2460.404297 0)"/>
-     <use xlink:href="#LCDReg-32" transform="translate(2487.064453 0)"/>
-     <use xlink:href="#LCDReg-30" transform="translate(2533.744141 0)"/>
-     <use xlink:href="#LCDReg-31" transform="translate(2578.810547 0)"/>
-     <use xlink:href="#LCDReg-35" transform="translate(2602.404297 0)"/>
-     <use xlink:href="#LCDReg-29" transform="translate(2649.083984 0)"/>
+     <use xlink:href="#LCDReg-28" transform="translate(1164.822266 0)"/>
+     <use xlink:href="#LCDReg-32" transform="translate(1191.482422 0)"/>
+     <use xlink:href="#LCDReg-30" transform="translate(1238.162109 0)"/>
+     <use xlink:href="#LCDReg-31" transform="translate(1283.228516 0)"/>
+     <use xlink:href="#LCDReg-38" transform="translate(1306.572266 0)"/>
+     <use xlink:href="#LCDReg-29" transform="translate(1355.9375 0)"/>
+     <use xlink:href="#LCDReg-20" transform="translate(1382.597656 0)"/>
+     <use xlink:href="#LCDReg-7c" transform="translate(1407.597656 0)"/>
+     <use xlink:href="#LCDReg-20" transform="translate(1457.597656 0)"/>
+     <use xlink:href="#LCDReg-50" transform="translate(1482.597656 0)"/>
+     <use xlink:href="#LCDReg-61" transform="translate(1527.095703 0)"/>
+     <use xlink:href="#LCDReg-72" transform="translate(1576.412109 0)"/>
+     <use xlink:href="#LCDReg-69" transform="translate(1621.478516 0)"/>
+     <use xlink:href="#LCDReg-73" transform="translate(1640.130859 0)"/>
+     <use xlink:href="#LCDReg-20" transform="translate(1689.447266 0)"/>
+     <use xlink:href="#LCDReg-41" transform="translate(1714.447266 0)"/>
+     <use xlink:href="#LCDReg-67" transform="translate(1759.763672 0)"/>
+     <use xlink:href="#LCDReg-72" transform="translate(1804.261719 0)"/>
+     <use xlink:href="#LCDReg-65" transform="translate(1849.328125 0)"/>
+     <use xlink:href="#LCDReg-65" transform="translate(1892.003906 0)"/>
+     <use xlink:href="#LCDReg-6d" transform="translate(1934.679688 0)"/>
+     <use xlink:href="#LCDReg-65" transform="translate(1983.996094 0)"/>
+     <use xlink:href="#LCDReg-6e" transform="translate(2026.671875 0)"/>
+     <use xlink:href="#LCDReg-74" transform="translate(2075.988281 0)"/>
+     <use xlink:href="#LCDReg-20" transform="translate(2118.664062 0)"/>
+     <use xlink:href="#LCDReg-28" transform="translate(2143.664062 0)"/>
+     <use xlink:href="#LCDReg-32" transform="translate(2170.324219 0)"/>
+     <use xlink:href="#LCDReg-30" transform="translate(2217.003906 0)"/>
+     <use xlink:href="#LCDReg-31" transform="translate(2262.070312 0)"/>
+     <use xlink:href="#LCDReg-35" transform="translate(2285.664062 0)"/>
+     <use xlink:href="#LCDReg-29" transform="translate(2332.34375 0)"/>
+     <use xlink:href="#LCDReg-20" transform="translate(2359.003906 0)"/>
+     <use xlink:href="#LCDReg-7c" transform="translate(2384.003906 0)"/>
+     <use xlink:href="#LCDReg-20" transform="translate(2434.003906 0)"/>
+     <use xlink:href="#LCDReg-49" transform="translate(2459.003906 0)"/>
+     <use xlink:href="#LCDReg-50" transform="translate(2477.65625 0)"/>
+     <use xlink:href="#LCDReg-43" transform="translate(2525.654297 0)"/>
+     <use xlink:href="#LCDReg-43" transform="translate(2568.330078 0)"/>
+     <use xlink:href="#LCDReg-20" transform="translate(2611.005859 0)"/>
+     <use xlink:href="#LCDReg-41" transform="translate(2636.005859 0)"/>
+     <use xlink:href="#LCDReg-52" transform="translate(2685.322266 0)"/>
+     <use xlink:href="#LCDReg-36" transform="translate(2734.638672 0)"/>
+     <use xlink:href="#LCDReg-20" transform="translate(2782.636719 0)"/>
+     <use xlink:href="#LCDReg-28" transform="translate(2807.636719 0)"/>
+     <use xlink:href="#LCDReg-32" transform="translate(2834.296875 0)"/>
+     <use xlink:href="#LCDReg-30" transform="translate(2880.976562 0)"/>
+     <use xlink:href="#LCDReg-32" transform="translate(2930.292969 0)"/>
+     <use xlink:href="#LCDReg-33" transform="translate(2976.972656 0)"/>
+     <use xlink:href="#LCDReg-29" transform="translate(3019.648438 0)"/>
     </g>
-    <!-- NASA GISS/Berkeley Earth Temperature Data | Copernicus Climate Change Service -->
-    <g style="fill: #666666" transform="translate(110.698828 415.551688) scale(0.13 -0.13)">
+    <!-- Data: Rohde et al., Berkley Earth (2020) -->
+    <g style="fill: #666666" transform="translate(216.623437 416.507937) scale(0.13 -0.13)">
      <defs>
-      <path id="LCDReg-4e" d="M 1194 4053 
-L 900 2388 
-L 597 2131 
-L 388 2388 
+      <path id="LCDReg-68" d="M 2250 2391 
+L 2459 2134 
+L 2159 1878 
+L 909 1878 
+L 697 2134 
+L 1000 2391 
+L 2250 2391 
+z
+M 913 2466 
+L 613 2209 
+L 400 2466 
 L 681 4053 
 L 981 4309 
 L 1194 4053 
+L 913 2466 
 z
-M 1606 4053 
-L 2316 2803 
-L 2244 2391 
-L 1959 2391 
-L 1228 3650 
-L 1300 4053 
-L 1606 4053 
-z
-M 3156 4053 
-L 2863 2388 
-L 2559 2131 
-L 2350 2388 
-L 2644 4053 
-L 2944 4309 
-L 3156 4053 
-z
-M 809 1878 
+M 797 1816 
 L 516 213 
 L 213 -44 
 L 3 213 
-L 297 1878 
-L 597 2134 
-L 809 1878 
+L 288 1816 
+L 588 2072 
+L 797 1816 
 z
-M 2772 1878 
+M 2359 2450 
+L 2644 4053 
+L 2944 4309 
+L 3156 4053 
+L 2872 2450 
+L 2572 2194 
+L 2359 2450 
+z
+M 2247 1803 
+L 2547 2059 
+L 2759 1803 
 L 2478 213 
 L 2178 -44 
 L 1966 213 
-L 2259 1878 
-L 2559 2134 
-L 2772 1878 
+L 2247 1803 
 z
 " transform="scale(0.015625)"/>
-      <path id="LCDReg-2f" d="M 3438 3944 
-L 1891 2134 
-L 1603 2134 
-L 1591 2478 
-L 3122 4266 
-L 3497 4266 
-L 3438 3944 
-z
-M 1616 1813 
-L 69 0 
-L -291 0 
-L -231 344 
-L 1300 2134 
-L 1603 2134 
-L 1616 1813 
+      <path id="LCDReg-2c" d="M 656 513 
+L 528 -209 
+L 225 -469 
+L 16 -209 
+L 144 513 
+L 656 513 
 z
 " transform="scale(0.015625)"/>
       <path id="LCDReg-6b" d="M 913 2466 
@@ -2590,145 +2653,67 @@ L 481 513
 L 1834 513 
 z
 " transform="scale(0.015625)"/>
-      <path id="LCDReg-68" d="M 2250 2391 
-L 2459 2134 
-L 2159 1878 
-L 909 1878 
-L 697 2134 
-L 1000 2391 
-L 2250 2391 
-z
-M 913 2466 
-L 613 2209 
-L 400 2466 
-L 681 4053 
-L 981 4309 
-L 1194 4053 
-L 913 2466 
-z
-M 797 1816 
-L 516 213 
-L 213 -44 
-L 3 213 
-L 288 1816 
-L 588 2072 
-L 797 1816 
-z
-M 2359 2450 
-L 2644 4053 
-L 2944 4309 
-L 3156 4053 
-L 2872 2450 
-L 2572 2194 
-L 2359 2450 
-z
-M 2247 1803 
-L 2547 2059 
-L 2759 1803 
-L 2478 213 
-L 2178 -44 
-L 1966 213 
-L 2247 1803 
-z
-" transform="scale(0.015625)"/>
      </defs>
-     <use xlink:href="#LCDReg-4e"/>
-     <use xlink:href="#LCDReg-41" transform="translate(45.691406 0)"/>
-     <use xlink:href="#LCDReg-53" transform="translate(95.007812 0)"/>
-     <use xlink:href="#LCDReg-41" transform="translate(140.199219 0)"/>
-     <use xlink:href="#LCDReg-20" transform="translate(189.515625 0)"/>
-     <use xlink:href="#LCDReg-47" transform="translate(214.515625 0)"/>
-     <use xlink:href="#LCDReg-49" transform="translate(262.513672 0)"/>
-     <use xlink:href="#LCDReg-53" transform="translate(281.166016 0)"/>
-     <use xlink:href="#LCDReg-53" transform="translate(330.482422 0)"/>
-     <use xlink:href="#LCDReg-2f" transform="translate(379.798828 0)"/>
-     <use xlink:href="#LCDReg-42" transform="translate(429.847656 0)"/>
-     <use xlink:href="#LCDReg-65" transform="translate(479.164062 0)"/>
-     <use xlink:href="#LCDReg-72" transform="translate(521.839844 0)"/>
-     <use xlink:href="#LCDReg-6b" transform="translate(567.03125 0)"/>
-     <use xlink:href="#LCDReg-65" transform="translate(612.097656 0)"/>
-     <use xlink:href="#LCDReg-6c" transform="translate(654.773438 0)"/>
-     <use xlink:href="#LCDReg-65" transform="translate(694.763672 0)"/>
-     <use xlink:href="#LCDReg-79" transform="translate(735.314453 0)"/>
-     <use xlink:href="#LCDReg-20" transform="translate(783.3125 0)"/>
-     <use xlink:href="#LCDReg-45" transform="translate(808.3125 0)"/>
-     <use xlink:href="#LCDReg-61" transform="translate(850.988281 0)"/>
-     <use xlink:href="#LCDReg-72" transform="translate(900.304688 0)"/>
-     <use xlink:href="#LCDReg-74" transform="translate(945.621094 0)"/>
-     <use xlink:href="#LCDReg-68" transform="translate(985.671875 0)"/>
-     <use xlink:href="#LCDReg-20" transform="translate(1034.988281 0)"/>
-     <use xlink:href="#LCDReg-54" transform="translate(1059.988281 0)"/>
-     <use xlink:href="#LCDReg-65" transform="translate(1100.039062 0)"/>
-     <use xlink:href="#LCDReg-6d" transform="translate(1142.714844 0)"/>
-     <use xlink:href="#LCDReg-70" transform="translate(1188.40625 0)"/>
-     <use xlink:href="#LCDReg-65" transform="translate(1236.404297 0)"/>
-     <use xlink:href="#LCDReg-72" transform="translate(1279.080078 0)"/>
-     <use xlink:href="#LCDReg-61" transform="translate(1324.271484 0)"/>
-     <use xlink:href="#LCDReg-74" transform="translate(1373.587891 0)"/>
-     <use xlink:href="#LCDReg-75" transform="translate(1416.263672 0)"/>
-     <use xlink:href="#LCDReg-72" transform="translate(1465.580078 0)"/>
-     <use xlink:href="#LCDReg-65" transform="translate(1510.646484 0)"/>
-     <use xlink:href="#LCDReg-20" transform="translate(1553.322266 0)"/>
-     <use xlink:href="#LCDReg-44" transform="translate(1578.322266 0)"/>
-     <use xlink:href="#LCDReg-61" transform="translate(1627.638672 0)"/>
-     <use xlink:href="#LCDReg-74" transform="translate(1676.955078 0)"/>
-     <use xlink:href="#LCDReg-61" transform="translate(1715.505859 0)"/>
-     <use xlink:href="#LCDReg-20" transform="translate(1764.822266 0)"/>
-     <use xlink:href="#LCDReg-7c" transform="translate(1789.822266 0)"/>
-     <use xlink:href="#LCDReg-20" transform="translate(1839.822266 0)"/>
-     <use xlink:href="#LCDReg-43" transform="translate(1864.822266 0)"/>
-     <use xlink:href="#LCDReg-6f" transform="translate(1907.498047 0)"/>
-     <use xlink:href="#LCDReg-70" transform="translate(1956.814453 0)"/>
-     <use xlink:href="#LCDReg-65" transform="translate(2004.8125 0)"/>
-     <use xlink:href="#LCDReg-72" transform="translate(2047.488281 0)"/>
-     <use xlink:href="#LCDReg-6e" transform="translate(2092.554688 0)"/>
-     <use xlink:href="#LCDReg-69" transform="translate(2141.871094 0)"/>
-     <use xlink:href="#LCDReg-63" transform="translate(2160.523438 0)"/>
-     <use xlink:href="#LCDReg-75" transform="translate(2203.199219 0)"/>
-     <use xlink:href="#LCDReg-73" transform="translate(2252.515625 0)"/>
-     <use xlink:href="#LCDReg-20" transform="translate(2301.832031 0)"/>
-     <use xlink:href="#LCDReg-43" transform="translate(2326.832031 0)"/>
-     <use xlink:href="#LCDReg-6c" transform="translate(2369.507812 0)"/>
-     <use xlink:href="#LCDReg-69" transform="translate(2409.498047 0)"/>
-     <use xlink:href="#LCDReg-6d" transform="translate(2428.150391 0)"/>
-     <use xlink:href="#LCDReg-61" transform="translate(2477.466797 0)"/>
-     <use xlink:href="#LCDReg-74" transform="translate(2526.783203 0)"/>
-     <use xlink:href="#LCDReg-65" transform="translate(2566.833984 0)"/>
-     <use xlink:href="#LCDReg-20" transform="translate(2609.509766 0)"/>
-     <use xlink:href="#LCDReg-43" transform="translate(2634.509766 0)"/>
-     <use xlink:href="#LCDReg-68" transform="translate(2677.185547 0)"/>
-     <use xlink:href="#LCDReg-61" transform="translate(2726.501953 0)"/>
-     <use xlink:href="#LCDReg-6e" transform="translate(2775.818359 0)"/>
-     <use xlink:href="#LCDReg-67" transform="translate(2825.134766 0)"/>
-     <use xlink:href="#LCDReg-65" transform="translate(2869.632812 0)"/>
-     <use xlink:href="#LCDReg-20" transform="translate(2912.308594 0)"/>
-     <use xlink:href="#LCDReg-53" transform="translate(2937.308594 0)"/>
-     <use xlink:href="#LCDReg-65" transform="translate(2986.625 0)"/>
-     <use xlink:href="#LCDReg-72" transform="translate(3029.300781 0)"/>
-     <use xlink:href="#LCDReg-76" transform="translate(3074.367188 0)"/>
-     <use xlink:href="#LCDReg-69" transform="translate(3122.365234 0)"/>
-     <use xlink:href="#LCDReg-63" transform="translate(3141.017578 0)"/>
-     <use xlink:href="#LCDReg-65" transform="translate(3183.693359 0)"/>
+     <use xlink:href="#LCDReg-44"/>
+     <use xlink:href="#LCDReg-61" transform="translate(49.316406 0)"/>
+     <use xlink:href="#LCDReg-74" transform="translate(98.632812 0)"/>
+     <use xlink:href="#LCDReg-61" transform="translate(137.183594 0)"/>
+     <use xlink:href="#LCDReg-3a" transform="translate(186.5 0)"/>
+     <use xlink:href="#LCDReg-20" transform="translate(207.837891 0)"/>
+     <use xlink:href="#LCDReg-52" transform="translate(232.837891 0)"/>
+     <use xlink:href="#LCDReg-6f" transform="translate(278.029297 0)"/>
+     <use xlink:href="#LCDReg-68" transform="translate(327.345703 0)"/>
+     <use xlink:href="#LCDReg-64" transform="translate(376.662109 0)"/>
+     <use xlink:href="#LCDReg-65" transform="translate(425.978516 0)"/>
+     <use xlink:href="#LCDReg-20" transform="translate(468.654297 0)"/>
+     <use xlink:href="#LCDReg-65" transform="translate(493.654297 0)"/>
+     <use xlink:href="#LCDReg-74" transform="translate(534.955078 0)"/>
+     <use xlink:href="#LCDReg-20" transform="translate(577.630859 0)"/>
+     <use xlink:href="#LCDReg-61" transform="translate(602.630859 0)"/>
+     <use xlink:href="#LCDReg-6c" transform="translate(651.947266 0)"/>
+     <use xlink:href="#LCDReg-2e" transform="translate(691.9375 0)"/>
+     <use xlink:href="#LCDReg-2c" transform="translate(713.275391 0)"/>
+     <use xlink:href="#LCDReg-20" transform="translate(734.613281 0)"/>
+     <use xlink:href="#LCDReg-42" transform="translate(759.613281 0)"/>
+     <use xlink:href="#LCDReg-65" transform="translate(808.929688 0)"/>
+     <use xlink:href="#LCDReg-72" transform="translate(851.605469 0)"/>
+     <use xlink:href="#LCDReg-6b" transform="translate(896.796875 0)"/>
+     <use xlink:href="#LCDReg-6c" transform="translate(946.113281 0)"/>
+     <use xlink:href="#LCDReg-65" transform="translate(986.103516 0)"/>
+     <use xlink:href="#LCDReg-79" transform="translate(1026.654297 0)"/>
+     <use xlink:href="#LCDReg-20" transform="translate(1074.652344 0)"/>
+     <use xlink:href="#LCDReg-45" transform="translate(1099.652344 0)"/>
+     <use xlink:href="#LCDReg-61" transform="translate(1142.328125 0)"/>
+     <use xlink:href="#LCDReg-72" transform="translate(1191.644531 0)"/>
+     <use xlink:href="#LCDReg-74" transform="translate(1236.960938 0)"/>
+     <use xlink:href="#LCDReg-68" transform="translate(1277.011719 0)"/>
+     <use xlink:href="#LCDReg-20" transform="translate(1326.328125 0)"/>
+     <use xlink:href="#LCDReg-28" transform="translate(1351.328125 0)"/>
+     <use xlink:href="#LCDReg-32" transform="translate(1377.988281 0)"/>
+     <use xlink:href="#LCDReg-30" transform="translate(1424.667969 0)"/>
+     <use xlink:href="#LCDReg-32" transform="translate(1473.984375 0)"/>
+     <use xlink:href="#LCDReg-30" transform="translate(1520.664062 0)"/>
+     <use xlink:href="#LCDReg-29" transform="translate(1569.980469 0)"/>
     </g>
    </g>
    <g id="patch_8">
-    <path d="M 320.4 383.350359 
-C 323.16872 383.350359 325.824414 382.214492 327.782195 380.19292 
-C 329.739976 378.171348 330.84 375.429122 330.84 372.570188 
-C 330.84 369.711253 329.739976 366.969027 327.782195 364.947455 
-C 325.824414 362.925883 323.16872 361.790016 320.4 361.790016 
-C 317.63128 361.790016 314.975586 362.925883 313.017805 364.947455 
-C 311.060024 366.969027 309.96 369.711253 309.96 372.570188 
-C 309.96 375.429122 311.060024 378.171348 313.017805 380.19292 
-C 314.975586 382.214492 317.63128 383.350359 320.4 383.350359 
+    <path d="M 320.4 384.278484 
+C 323.16872 384.278484 325.824414 383.139654 327.782195 381.112808 
+C 329.739976 379.085961 330.84 376.336581 330.84 373.470187 
+C 330.84 370.603794 329.739976 367.854414 327.782195 365.827567 
+C 325.824414 363.800721 323.16872 362.661891 320.4 362.661891 
+C 317.63128 362.661891 314.975586 363.800721 313.017805 365.827567 
+C 311.060024 367.854414 309.96 370.603794 309.96 373.470187 
+C 309.96 376.336581 311.060024 379.085961 313.017805 381.112808 
+C 314.975586 383.139654 317.63128 384.278484 320.4 384.278484 
 z
-" clip-path="url(#p671b451fd3)" style="stroke: #ffffff; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#p38c88093fa)" style="stroke: #ffffff; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p671b451fd3">
-   <rect x="7.2" y="49.165031" width="626.4" height="344.9655"/>
+  <clipPath id="p38c88093fa">
+   <rect x="7.2" y="49.221281" width="626.4" height="345.8655"/>
   </clipPath>
  </defs>
 </svg>
